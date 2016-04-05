@@ -9,7 +9,7 @@
         width: '1100',
         inactiveCountryFill: 'white',
         inactiveCountryStroke: 'grey',
-        inactiveCountryStrokeWidth: 6,
+        inactiveCountryStrokeWidth: 3,
         showCountryBoxOnMouserEnter: true,
         drawNorthAmerica: true,
         drawCentralAmerica: true,
@@ -35,6 +35,8 @@
 
 	c_names=['ng', 'jp', 'pk', 'us', 'fr', 'ru'];
     c_colors=['#1f73b1', '#081d58', '#3aafc3', '#ffffd9', '#1e7eb7', '#f9fdcd'];
+    num_exp=[2.31, 2.43, 2.23, 2.02, 2.29, 2.04];
+    sem_exp=[0.11, 0.11, 0.12, 0.11, 0.15, 0.16]
     for(i=0;i<c_names.length;i++){
 	    $('#'+c_names[i]).attr('fill',c_colors[i]);
 	}
