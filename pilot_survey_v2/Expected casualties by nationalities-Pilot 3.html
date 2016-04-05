@@ -291,16 +291,6 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I seem to have a few stupid errors in this code (forgot to check whether people entered anything...) so the counts aren't quite even, but close enough for a pilot</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
@@ -308,7 +298,6 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">country_count</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s1">&#39;true_country&#39;</span><span class="p">],</span><span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">countries</span><span class="p">,</span><span class="n">country_count</span><span class="p">])</span>
-<span class="nb">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">country_count</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2232,6 +2221,47 @@ CCGEEEIIIUTl/D9vh2SnJeNyKQAAAABJRU5ErkJggg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some interesting things to note and some speculation which is entirely post-hoc and should be not be treated seriously:</p>
+<ol>
+<li>The United States is ranked surprisingly high. This may reflect the fact that we used "Texas" to represent the US (due to an earlier iteration in which we tried to match country/state sizes) and <a href="http://themonkeycage.org/2012/12/how-representative-are-amazon-mechanical-turk-workers/">Mechanical Turk users skewing liberal</a></li>
+<li>Liberia is really low. This is perplexing but may be due to Americans not knowing what Liberia is and assuming it is a small country. We quickly asked some people who walked by our lab what they knew about Liberia and the most common answer was "Nothing?"</li>
+<li>Spain is really high. We're not sure what's going on with that</li>
+<li>Iraq is really low while Afghanistan is really high. This may be because the US has more troops deployed in Iraq compared to Afghanistan, whereas the US involvement during the Afghanistan war was more limited.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Interim-summary">Interim summary<a class="anchor-link" href="#Interim-summary">&#182;</a></h1><p>We are seeing some really fascinating patterns that capture people's expectations about tragedies in different countries. However, it's important to note that any conclusions will be correlational and that a different experiment will be necessary to make causal claims.</p>
+<p>There are three next steps that we're planning on taking to really flesh our findings out:</p>
+<ol>
+<li>Compare to real-world statistics on possible predictors (GDP, physical distance, tourism, article mentions, etc.)-We currently don't have a quantitative explanation for these results, just our general intuitions. People might be relying on some combination of these cues to reason about the articles</li>
+<li>Examine how these biases change as they propogate through social networks-On Facebook and other social networks, people don't just read the posts; they also remember then, form their own impression of it and construct a new post. As that process repeats, the content of the original message will become distorted by the network's general expectations. Having people do this task in a similar social network (like the one used in Lew &amp; Vul, 2015, Prior expectations in visual memory revealed by iterated learning) will allow us to examine these dynamics. Additionally, because the correct answer will change as it is passed from person to person, we will also being able to circumvent the problem of people remembering the correct answer </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="World-Heatmap-code">World Heatmap code<a class="anchor-link" href="#World-Heatmap-code">&#182;</a></h1><p>This generates colors for our heatmap</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[89]:</div>
@@ -2422,22 +2452,6 @@ BAD4FiEIAPCt/wcbToRPQemX1gAAAABJRU5ErkJggg==
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interim-summary">Interim summary<a class="anchor-link" href="#Interim-summary">&#182;</a></h1><p>We are seeing some really fascinating patterns that capture people's expectations about tragedies in different countries. It seems to take fewer American casualties to surpass people's expectations than Pakistani, French, Nigerian or Japanese deaths. However, it's important to note that this is an initial pilot study and these results must be replicated. As Figure 1 demonstrates, the modal response was around the correct number of deaths, weakening our experiment's ability to detect expectation driven biases.</p>
-<p>There are three next steps that we're planning on taking to really flesh our findings out:</p>
-<ol>
-<li>Gather real-world statistics on possible predictors (GDP, physical distance, tourism, article mentions, etc.)-We currently don't have a quantitative explanation for these results, just our general intuitions. People might be relying on some combination of these cues to reason about the articles</li>
-<li>Expand the roster of countries-Building on the predictors, there may be other countries that we find useful to add to washout idiosyncratic biases (e.g., Japan being earthquake prone)</li>
-<li>Examine how these biases change as they propogate through social networks-On Facebook and other social networks, people don't just read the posts; they also remember then, form their own impression of it and construct a new post. As that process repeats, the content of the original message will become distorted by the network's general expectations. Having people do this task in a similar social network (like the one used in Lew &amp; Vul, 2015, Prior expectations in visual memory revealed by iterated learning) will allow us to examine these dynamics. Additionally, because the correct answer will change as it is passed from person to person, we will also being able to circumvent the problem of people remembering the correct answer </li>
-</ol>
-
-</div>
-</div>
 </div>
     </div>
   </div>
